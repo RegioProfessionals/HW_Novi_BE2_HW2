@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -11,6 +13,17 @@ public class Main {
         bartender("Tom");
         sum(4,20);
 
+        //BONUS-Opdrachten
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Voer een getal in: ");
+        int givenNumber = sc.nextInt();
+
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("Voer een text in: ");
+        String givenText = sc1.nextLine();
+
+        evenUnevenChecker(givenNumber);
+        textLengthChecker(givenText);
     }
 
     public static void hello() {
@@ -67,4 +80,34 @@ public class Main {
         System.out.println("The sum of " + input1 + " and " + input2 +" = " + (input1 + input2));
         return input1+input2;
     }
+
+    //  BONUS-Opdrachten
+
+    public static boolean evenUnevenChecker(int givenNumber) {
+        if (givenNumber == 0) {
+            System.out.println("The number you gave me is: Even nor uneven!");
+            return false;
+        } else if (givenNumber % 2 != 0) {
+            System.out.println("The number you gave me is: Uneven!");
+            return true;
+        } else {
+            System.out.println("The number you gave me is: Even!");
+            return true;
+        }
+    }
+
+    public static boolean  textLengthChecker(String givenText) {
+        if (givenText.length() < 15) {
+            System.out.println("The text is: Short!");
+            return true;
+        } else if (givenText.length() > 20) {
+            System.out.println("The text is: Long!");
+            return true;
+        } else {
+            System.out.println("The text is: Medium!");
+            return true;
+        }
+
+    }
+
 }
